@@ -1,0 +1,186 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<title>Details - Tixati Web Interface</title>
+	<link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<body>
+
+<table class="topnav">
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td class="topnavselitem"><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="titlehdr">
+	$name$
+</div>
+
+<table class="xfernav">
+	<tr>
+		<td class="xfernavselitem"><a href="details">Details</a></td>
+		<td><a href="files">Files</a></td>
+		<td><a href="trackers">Trackers</a></td>
+		<td><a href="peers">Peers</a></td>
+		<td><a href="pieces">Pieces</a></td>
+		<td><a href="bandwidth">Bandwidth</a></td>
+		<td><a href="eventlog">Event Log</a></td>
+		<td><a href="options">Options</a></td>
+	</tr>
+</table>
+
+<br/>
+$shortstatus$
+<br/>
+<br/>
+<div style="clear:both;"/>
+
+<table class="xferdetailstopleftstats">
+	<tr>
+		<th>Progress</th>
+	</tr>
+	<tr>
+		<td>Bytes Complete</td>
+		<td style="text-align:right;">$bytes_complete$</td>
+	</tr>
+	<tr>
+		<td>Remaining</td>
+		<td style="text-align:right;">$bytes_remaining$</td>
+	</tr>
+	<tr>
+		<td>Total</td>
+		<td style="text-align:right;">$bytes_total$</td>
+	</tr>
+</table>
+
+<table class="xferdetailstopmiddlestats">
+	<tr>
+		<th>$piecesize$ Pieces</th>
+	</tr>
+	<tr>
+		<td>Saved</td>
+		<td style="text-align:right;">$pieces_complete$</td>
+	</tr>
+	<tr>
+		<td>Remaining</td>
+		<td style="text-align:right;">$pieces_remaining$</td>
+	</tr>
+	<tr>
+		<td>Total</td>
+		<td style="text-align:right;">$pieces_total$</td>
+	</tr>
+</table>
+
+<table class="xferdetailstoprightstats">
+	<tr>
+		<th>Availability</th>
+	</tr>
+	<tr>
+		<td>Seeds</td>
+		<td style="text-align:right;">$seeds$</td>
+	</tr>
+	<tr>
+		<td>Peers</td>
+		<td style="text-align:right;">$peers$</td>
+	</tr>
+	<tr>
+		<td>Copies</td>
+		<td style="text-align:right;">$availability$</td>
+	</tr>
+</table>
+
+<div style="clear:both;"/>
+
+<br/>
+
+<table class="xferdetailsbottomleftstats">
+	<tr>
+		<th>Upload Ratio</th>
+		<td>$ul_ratio$</td>
+	</tr>
+	<tr>
+		<th>Swarm Avg. Download B/s</th>
+		<td>$swarm_avg_dlbps$</td>
+	</tr>
+	<tr>
+		<th>Local Avg. Download B/s</th>
+		<td>$local_avg_dlbps$</td>
+	</tr>
+	<tr>
+		<th>Elapsed Time</th>
+		<td>$elapsed_time$</td>
+	</tr>
+	<tr>
+		<th>Remaining Time</th>
+		<td>$remaining_time$</td>
+	</tr>
+</table>
+
+
+<table class="xferdetailsbottomrightstats">
+	<tr>
+		<th></th>
+		<th style="text-align:right;">Total</th>
+		<th style="text-align:right;">File</th>
+		<th style="text-align:right;">Protocol</th>
+	</tr>
+	<tr>
+		<th>Bytes In</th>
+		<td>$in_bytes_total$</td>
+		<td>$in_bytes_file$</td>
+		<td>$in_bytes_protocol$</td>
+	</tr>
+	<tr>
+		<th>Bytes Out</th>
+		<td>$out_bytes_total$</td>
+		<td>$out_bytes_file$</td>
+		<td>$out_bytes_protocol$</td>
+	</tr>
+	<tr>
+		<th>B/s In</th>
+		<td>$in_bps_total$</td>
+		<td>$in_bps_file$</td>
+		<td>$in_bps_protocol$</td>
+	</tr>
+	<tr>
+		<th>B/s Out</th>
+		<td>$out_bps_total$</td>
+		<td>$out_bps_file$</td>
+		<td>$out_bps_protocol$</td>
+	</tr>
+</table>
+
+<div style="clear:both;"/>
+
+<br/>
+
+
+<form method="post" action="/transfers/$guid$/details/action">
+<table class="xferdetailsctrls">
+	<tr>
+		<td><input type="submit" name="start" value="Start"/></td>
+		<td><input type="submit" name="stop" value="Stop"/></td>
+		<td><input type="submit" name="remove" value="Remove"/></td>
+	</tr>
+	<tr>
+		<td><input type="submit" name="searchdht" value="Search DHT"/></td>
+		<td><input type="submit" name="checkfiles" value="Check Files"/></td>
+		<td><input type="submit" name="delete" value="Delete Files"/></td>
+	</tr>
+</table>
+</form>
+
+<br/>
+
+</body>
+</html>
+
+

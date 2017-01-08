@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<title>Settings - Tixati Web Interface</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+
+<table class="topnav"><tbody>
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td class="topnavselitem"><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</tbody></table>
+
+<br/>
+<br/>
+
+<form method="post" action="/settings/action">
+<table class="settingsbox"><tbody>
+	<tr>
+		<td>Download Slots&nbsp;<input type="number" name="setting_dlslots" min="1" max="1000" value="$setting_dlslots$"/><br/>
+			Recycle unused slots for uploads&nbsp;<input type="checkbox" name="setting_dlslotrecycle" value="1" $chk_setting_dlslotrecycle$/><br/>
+			Auto-manage&nbsp;<input type="checkbox" name="setting_dlslotmanage" value="1" $chk_setting_dlslotmanage$/></td>
+		<td>Upload Slots&nbsp;<input type="number" name="setting_ulslots" min="1" max="1000" value="$setting_ulslots$"/><br/>
+			Recycle unused slots for downloads&nbsp;<input type="checkbox" name="setting_ulslotrecycle" value="1" $chk_setting_ulslotrecycle$/><br/>
+			Auto-manage&nbsp;<input type="checkbox" name="setting_ulslotmanage" value="1" $chk_setting_ulslotmanage$/></td>
+		<td><input type="submit" name="update_slots" Value="Apply"/></td>
+	</tr>
+</tbody></table>
+</form>
+
+<br/>
+<br/>
+
+<form method="post" action="/settings/action">
+<table class="settingsbox"><tbody>
+	<tr>
+		<td>
+			Stop seeding on upload ratio above&nbsp;<input type="number" name="setting_seedingratiostop" step="0.1" min="0" max="100" value="$setting_seedingratiostop$"/><br/>
+			Stop constant seeds on upload ratio above&nbsp;<input type="number" name="setting_constantratiostop" step="0.1" min="0" max="100" value="$setting_constantratiostop$"/><br/>
+			Stop created seeds on upload ratio above&nbsp;<input type="number" name="setting_createdratiostop" step="0.1" min="0" max="100" value="$setting_createdratiostop$"/>
+		</td>
+		<td>
+			Start new transfers&nbsp;<input type="checkbox" name="setting_xferautostartnew" value="1" $chk_setting_xferautostartnew$/><br/>
+			Start previously running on startup&nbsp;<input type="checkbox" name="setting_xferautorestart" value="1" $chk_setting_xferautorestart$/>
+		</td>
+		<td><input type="submit" name="update_xferautostartstop" Value="Apply"/></td>
+	</tr>
+</tbody></table>
+</form>
+
+<br/>
+<br/>
+
+<form method="post" action="/settings/action">
+<table class="settingsbox"><tbody>
+	<tr>
+		<td>Show filter-box for transfers in Web Interface&nbsp;<input type="checkbox" name="setting_webui_showfilter" value="1" $chk_setting_webui_showfilter$/></td>
+		<td><input type="submit" name="update_webui" Value="Apply"/></td>
+	</tr>
+</tbody></table>
+</form>
+
+<br/>
+<br/>
+
+</body>
+</html>

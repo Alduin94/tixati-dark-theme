@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<title>Tixati v$strver$ Web Interface</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body style="text-align:center;">
+
+<table class="topnav">
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td class="topnavselitem"><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="titlehdr">
+	Add Transfer
+</div>
+
+
+<br/>
+
+<table class="settingsbox">
+	<tr>
+		<td>Magnet link or HTTP link to .torrent file<br/>
+			<form method="post" action="/transfers/action" enctype="multipart/form-data">
+				<input type="text" name="addlinktext" size=70/><br/>
+				<input type="submit" name="addlink" Value="Add"/>&nbsp;
+				<input type="checkbox" name="noautostart" value="1"/>Stop before file allocation
+			</form>
+		</td>
+	</tr>
+</table>
+
+<br>
+
+<table class="settingsbox">
+	<tr>
+		<td>Upload a .torrent file<br/>
+			<form method="post" action="/transfers/action" enctype="multipart/form-data">
+				<input type="file" name="metafile" size=70/><br/>
+				<input type="submit" name="addmetafile" Value="Add"/>&nbsp;
+				<input type="checkbox" name="noautostart" value="1"/>Stop before file allocation
+			</form>
+		</td>
+	</tr>
+</table>
+
+<br>
+
+</body>
+</html>

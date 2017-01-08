@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<title>Bandwidth - Tixati Web Interface</title>
+	<link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<script>
+<!--
+function setupcharts()
+{
+	var w = window.innerWidth || document.documentElement.clientWidth;w=Math.floor(Math.max(200,(w-16)*0.98));
+	var h= window.innerHeight || document.documentElement.clientHeight;h=Math.floor(Math.max(120,h/2-90));
+	document.getElementById("chart_in").src="bandwidth/chart_in_"+w+"x"+h+"_1.png";
+	document.getElementById("chart_out").src="bandwidth/chart_out_"+w+"x"+h+"_1.png";
+}
+//-->
+</script>
+
+<body onload="setupcharts()">
+
+<table class="topnav">
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td class="topnavselitem"><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="titlehdr">
+	$name$
+</div>
+
+<table class="xfernav">
+	<tr>
+		<td><a href="details">Details</a></td>
+		<td><a href="files">Files</a></td>
+		<td><a href="trackers">Trackers</a></td>
+		<td><a href="peers">Peers</a></td>
+		<td><a href="pieces">Pieces</a></td>
+		<td class="xfernavselitem"><a href="bandwidth">Bandwidth</a></td>
+		<td><a href="eventlog">Event Log</a></td>
+		<td><a href="options">Options</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<form method="post" action="/transfers/$guid$/bandwidth/action">
+<table class="bwctrls">
+	<tr>
+		<td>Incoming Bandwidth Limit&nbsp;
+			<select name="inlimit">
+				<!--select inlimit-->
+			</select>
+		</td>
+		<td>Priority Group&nbsp;
+			<select name="inpriogrp">
+				<!--select inpriogrp-->
+			</select>
+		</td>
+		<td>Peer Allowance&nbsp;
+			<select name="inshare">
+				<!--select inshare-->
+			</select>
+		</td>
+		<td><input type="submit" name="update_inprio" Value="Apply"/></td>
+	</tr>
+</table>
+</form>
+
+<noscript><image class="bwviewchart" src="bandwidth/chart_in_480x300_1.png" alt="Incoming Bandwidth"/></noscript>
+<image class="bwviewchart" id="chart_in"/>
+<br/>
+
+<form method="post" action="/transfers/$guid$/bandwidth/action">
+<table class="bwctrls">
+	<tr>
+		<td>Outgoing Bandwidth Limit&nbsp;
+			<select name="outlimit">
+				<!--select outlimit-->
+			</select>
+		</td>
+		<td>Priority Group&nbsp;
+			<select name="outpriogrp">
+				<!--select outpriogrp-->
+			</select>
+		</td>
+		<td>Peer Allowance&nbsp;
+			<select name="outshare">
+				<!--select outshare-->
+			</select>
+		</td>
+		<td><input type="submit" name="update_outprio" Value="Apply"/></td>
+	</tr>
+</table>
+</form>
+
+<noscript><image class="bwviewchart" src="bandwidth/chart_out_480x300_1.png" alt="Outgoing Bandwidth"/></noscript>
+<image class="bwviewchart" id="chart_out"/>
+<br/>
+
+</body>
+</html>

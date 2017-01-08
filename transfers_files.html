@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<title>Files - Tixati Web Interface</title>
+	<link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+
+<script>
+<!--
+function udctrls()
+{
+	var inputs = document.getElementsByClassName("selection");
+	var sel = 0;
+	for(var i=inputs.length-1; i>=0; i--)
+	{
+		if(inputs[i].checked) sel=1;
+	}
+	var btns = document.getElementsByClassName("selctrl");
+	for(var i=btns.length-1; i>=0; i--)
+	{
+		if(sel) btns[i].disabled=false;
+		else btns[i].disabled=true;
+	}
+
+
+}
+//-->
+</script>
+
+<body onload="udctrls()">
+
+<table class="topnav">
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td class="topnavselitem"><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="titlehdr">
+	$name$
+</div>
+
+<table class="xfernav">
+	<tr>
+		<td><a href="details">Details</a></td>
+		<td class="xfernavselitem"><a href="files">Files</a></td>
+		<td><a href="trackers">Trackers</a></td>
+		<td><a href="peers">Peers</a></td>
+		<td><a href="pieces">Pieces</a></td>
+		<td><a href="bandwidth">Bandwidth</a></td>
+		<td><a href="eventlog">Event Log</a></td>
+		<td><a href="options">Options</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<form method="post" action="/transfers/$guid$/files/action">
+
+<table class="xferstable">
+	<tr>
+		<th>&nbsp;</th>
+		<th>Name</th>
+		<th>Priority</th>
+		<th>Bytes</th>
+		<th>Status</th>
+	</tr>
+<!--list_start files-->
+	<tr class="$statusclass_alt$">
+		<td><input class="selection" type="checkbox" name="$guid$" value="1" onclick="udctrls()"/></td>
+		<td>$name$</td>
+		<td>$priority$</td>
+		<td>$bytes$</td>
+		<td>$status$</td>
+	</tr>
+<!--list_end-->
+</table>
+
+<br/>
+
+<table class="xfersctrls">
+	<tr>
+		<td>Ordered&nbsp;
+			<select name="ordered_files" class="selctrl">
+				<option value="1">On</option>
+				<option value="0" selected>Off</option>
+			</select>
+		</td>
+		<td>Download Priority&nbsp;
+			<select name="priority" class="selctrl">
+				<option value="1000">Ultra High</option>
+				<option value="500">Very High</option>
+				<option value="250">High</option>
+				<option value="150">Above Normal</option>
+				<option value="100" selected>Normal</option>
+				<option value="70">Below Normal</option>
+				<option value="50">Low</option>
+				<option value="25">Very Low</option>
+				<option value="10">Ultra Low</option>
+				<option value="0">Off</option>
+			</select>
+		</td>
+		<td>Sequential&nbsp;
+			<select name="bte_priority" class="selctrl">
+				<option value="100">Aggressive</option>
+				<option value="50">On</option>
+				<option value="0" selected>Off</option>
+			</select>
+		</td>
+		<td>Head and Tail First&nbsp;
+			<select name="hat_priority" class="selctrl">
+				<option value="100">Aggressive</option>
+				<option value="50">On</option>
+				<option value="0" selected>Off</option>
+			</select>
+		</td>
+		<td><input type="submit" name="update_priority" Value="Apply" class="selctrl"/></td>
+	</tr>
+</table>
+
+</form>
+
+<br/>
+
+</body>
+</html>

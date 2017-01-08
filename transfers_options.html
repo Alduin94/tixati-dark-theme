@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<title>Options - Tixati Web Interface</title>
+	<link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<body>
+
+<table class="topnav">
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td class="topnavselitem"><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="titlehdr">
+	$name$
+</div>
+
+<table class="xfernav">
+	<tr>
+		<td><a href="details">Details</a></td>
+		<td><a href="files">Files</a></td>
+		<td><a href="trackers">Trackers</a></td>
+		<td><a href="peers">Peers</a></td>
+		<td><a href="pieces">Pieces</a></td>
+		<td><a href="bandwidth">Bandwidth</a></td>
+		<td><a href="eventlog">Event Log</a></td>
+		<td class="xfernavselitem"><a href="options">Options</a></td>
+	</tr>
+</table>
+
+
+<br/>
+<br/>
+
+<form method="post" action="/transfers/$guid$/options/action">
+<table class="xfersettingstopctrls">
+	<tr>
+		<td><input type="submit" name="start" value="Start"/></td>
+		<td><input type="submit" name="stop" value="Stop"/></td>
+		<td><input type="submit" name="remove" value="Remove"/></td>
+	</tr>
+	<tr>
+		<td><input type="submit" name="searchdht" value="Search DHT"/></td>
+		<td><input type="submit" name="checkfiles" value="Check Files"/></td>
+		<td><input type="submit" name="delete" value="Delete Files"/></td>
+	</tr>
+</table>
+
+<br/>
+
+
+<table class="xfersettingsctrls">
+	<tr>
+		<td>Upload Ratio Limit&nbsp;
+			<select name="ratiolimit">
+				<!--select ratiolimit-->
+			</select>
+		</td>
+		<td>Remote Seed Limit&nbsp;
+			<select name="seedlimit">
+				<!--select seedlimit-->
+			</select>
+		</td>
+		<td><input type="submit" name="update_ullimits" Value="Apply"/></td>
+	</tr>
+</table>
+
+<br/>
+
+<table class="xfersettingsctrls">
+	<tr>
+		<td>Constant Seeding&nbsp;
+			<select name="constseeding">
+				<!--select constseeding-->
+			</select>
+			&nbsp;
+			<input type="submit" name="update_constseeding" Value="Apply"/>
+		</td>
+		<td>Super Seeding&nbsp;
+			<select name="superseeding">
+				<!--select superseeding-->
+			</select>
+			&nbsp;
+			<input type="submit" name="update_superseeding" Value="Apply"/>
+		</td>
+	</tr>
+</table>
+</form>
+
+<br/>
+
+
+
+</body>
+</html>
+
+

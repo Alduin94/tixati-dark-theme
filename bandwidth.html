@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<title>Bandwidth - Tixati Web Interface</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<script>
+<!--
+function setupcharts()
+{
+	var w = window.innerWidth || document.documentElement.clientWidth;w=Math.floor(Math.max(200,(w-16)*0.98));
+	var h= window.innerHeight || document.documentElement.clientHeight;h=Math.floor(Math.max(120,h/2-90));
+	document.getElementById("chart_in").src="bandwidth/chart_in_"+w+"x"+h+"_1.png";
+	document.getElementById("chart_out").src="bandwidth/chart_out_"+w+"x"+h+"_1.png";
+	document.getElementById("chart_ping").src="bandwidth/chart_ping_"+w+"x"+h+"_1.png";
+}
+//-->
+</script>
+<body onload="setupcharts()">
+
+
+<table class="topnav"><tbody>
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td><a href="/transfers">Transfers</a></td>
+		<td class="topnavselitem"><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</tbody></table>
+
+
+<br>
+<form method="post" action="/bandwidth/action">
+<table class="bwctrls"><tbody>
+	<tr>
+		<td>KB/s In <input type="checkbox" name="throttle_in" value="1" $throttle_in_checked$/><input type="number" name="throttle_in_kbps" min="1" max="100000" value="$throttle_in_kbps$"/></td>
+		<td>KB/s Out <input type="checkbox" name="throttle_out" value="1" $throttle_out_checked$/><input type="number" name="throttle_out_kbps" min="1" max="100000" value="$throttle_out_kbps$"/></td>
+		<td>Auto-Limit <input type="checkbox" name="autolimit" value="1" $autolimit_checked$/></td>
+		<td>Presets <select name="bwpresets"><!--select bwpresets--></select></td>
+		<td><input type="submit" name="update" Value="Apply"/></td>
+	</tr>
+</tbody></table>
+</form>
+
+<p class="bandwidth-info">Incoming: <b>$bpsin$B/s</b></p>
+<noscript><image class="bwviewchart" src="bandwidth/chart_in_480x300_1.png" alt="Incoming Bandwidth"/></noscript>
+<image class="bwviewchart" id="chart_in"/>
+<br/>
+<p class="bandwidth-info">Outgoing: <b>$bpsout$B/s</b></p>
+<noscript><image class="bwviewchart" src="bandwidth/chart_out_480x300_1.png" alt="Outgoing Bandwidth"/></noscript>
+<image class="bwviewchart" id="chart_out"/>
+<br/>
+<!--if autolimit-->
+	<noscript><image class="bwviewchart" src="bandwidth/chart_ping_480x300_1.png" alt="Auto-Limit Ping Round Trip Milliseconds"/></noscript>
+	<image class="bwviewchart" id="chart_ping"/>
+	<br/>
+<!--endif-->
+<br/>
+
+</body>
+</html>

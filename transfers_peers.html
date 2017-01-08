@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="content-type">
+	<title>Peers - Tixati Web Interface</title>
+	<link rel="stylesheet" type="text/css" href="/main.css">
+</head>
+<body>
+
+<table class="topnav">
+	<tr>
+		<td><a href="/home">Home</a></td>
+		<td class="topnavselitem"><a href="/transfers">Transfers</a></td>
+		<td><a href="/bandwidth">Bandwidth</a></td>
+		<td><a href="/dht">DHT</a></td>
+		<td><a href="/settings">Settings</a></td>
+		<td><a href="/help">Help</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<div class="titlehdr">
+	$name$
+</div>
+
+<table class="xfernav">
+	<tr>
+		<td><a href="details">Details</a></td>
+		<td><a href="files">Files</a></td>
+		<td><a href="trackers">Trackers</a></td>
+		<td class="xfernavselitem"><a href="peers">Peers</a></td>
+		<td><a href="pieces">Pieces</a></td>
+		<td><a href="bandwidth">Bandwidth</a></td>
+		<td><a href="eventlog">Event Log</a></td>
+		<td><a href="options">Options</a></td>
+	</tr>
+</table>
+
+<br/>
+
+<table class="xferstable">
+	<tr>
+		<th>Name</th>
+		<th>Link</th>
+		<th>Bytes In</th>
+		<th>Bytes Out</th>
+		<th>Progress</th>
+		<th>Status</th>
+		<th>B/s In</th>
+		<th>B/s Out</th>
+		<th>Rem B/s</th>
+	</tr>
+<!--list_start peers-->
+	<tr class="$statusclass_alt$">
+		<td>$name$</td>
+		<td>$link$</td>
+		<td>$bytesin$</td>
+		<td>$bytesout$</td>
+		<td>$progress$</td>
+		<td>$status$</td>
+		<td>$bpsin$</td>
+		<td>$bpsout$</td>
+		<td>$rembps$</td>
+	</tr>
+<!--list_end-->
+</table>
+
+<br/>
+<br/>
+
+</body>
+</html>
+
+
