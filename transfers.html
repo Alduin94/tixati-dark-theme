@@ -53,10 +53,18 @@ function toggleHiddenControls() {
 }
 
 document.onkeypress = function(e) {
-    if(e.which == 13 && document.getElementById('addlinktext').value !== "") {
-			 document.getElementById("addlinksubmit").click();
-    }
+  var textInput = document.getElementById('addlinktext');
+  if(e.which == 13 && textInput.value !== "") {
+    document.getElementById("addlinksubmit").click();
+  } else if (e.which == 122 && e.ctrlKey) {
+    textInput.value = "";
+  }
 };
+
+
+document.addEventListener('paste', function (evt) {
+	document.getElementById('addlinktext').value = evt.clipboardData.getData('text/plain');
+}
 
 //-->
 </script>
@@ -84,11 +92,11 @@ document.onkeypress = function(e) {
 		<td><input type="submit" name="stop" value="Stop" class="selctrl"/></td>
 		<td><input type="submit" name="delete" value="Delete Files" class="selctrl"/></td>
 		<td style="text-align:right;">
-			<input type="text" name="addlinktext" size=10 style="width:70%" id="addlinktext"/>
+			<input type="text" name="addlinktext" size=10 style="width:70%" id="addlinktext" placehoder="magner URL"/>
 			<input type="submit" name="addlink" Value="Add" id="addlinksubmit"/>&nbsp;
 			<input type="checkbox" name="noautostart" value="1" title="Stop before file allocation" style="display:none;"/>
 		</td>
-		<td><a href="#" class="button" onclick="toggleHiddenControls()">Controls<a></td>
+		<td><a href="#" class="button" onclick="toggleHiddenControls()">Controls</a></td>
 	</tr>
 </table>
 
@@ -371,11 +379,10 @@ document.onkeypress = function(e) {
 		<th>Time Left</th>
 	</tr>
 </table>
-<p><a href="#top" class="button">Top</a><p>
+<p><a href="#top" class="button">Top</a></p>
 <a name="bottom">
+	
 </form>
-
-<br/>
 
 </body>
 </html>
