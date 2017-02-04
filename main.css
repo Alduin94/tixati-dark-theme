@@ -131,21 +131,21 @@ table.xfersctrls td{padding:4pt 6pt;}
 }
 
 .offline_even{color:#e31414;background-color:#202020;}
-.queued_even{color:#0000FF;background-color:#202020;}
+.queued_even{color:#1574ff;background-color:#202020;}
 .downloading_even{color:#FFDD55;background-color:#202020;}
 .seeding_even{color:#4bff2e;background-color:#202020;}
 .standby_even{color:#0000FF;background-color:#202020;}
 .complete_even{color:#797979;background-color:#202020;}
 
 .offline_odd{color:#e31414;background-color:#383838;}
-.queued_odd{color:#0000FF;background-color:#383838;}
+.queued_odd{color:#1574ff;background-color:#383838;}
 .downloading_odd{color:#FFDD55;background-color:#383838;}
 .seeding_odd{color:#4bff2e;background-color:#383838;}
 .standby_odd{color:#0000FF;background-color:#383838;}
 .complete_odd{color:#797979;background-color:#383838;}
 
 .offline{color:#9E2E27;}
-.queued{color:#0000FF;}
+.queued{color:#1574ff;}
 .downloading{color:#0C6000;}
 .seeding{color:#259985;}
 .standby{color:#0000FF;}
